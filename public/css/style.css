@@ -1,0 +1,287 @@
+
+body	{
+	align: center;
+	}
+
+div	{
+	padding: 5px;
+	}
+
+#whole_page	
+	{
+	font-family: "Lucida Grande", "Bitstream Vera Sans", "Verdana";
+	background-color: #DDDDDD;
+	border-style: solid;
+	border-width: 1px;
+	}
+#whole_page_wide
+	{
+	font-family: "Lucida Grande", "Bitstream Vera Sans", "Verdana";
+	background-color: #DDDDDD;
+	border-style: solid;
+	border-width: 1px;
+	}
+
+#page_header	
+	{
+	font-family: "Lucida Grande", "Bitstream Vera Sans", "Verdana";
+	font-size: 18px;
+	text-align: center;
+	
+	}
+
+#page_body 	
+	{
+	margin: 0px;
+	padding: 0;
+	background-color: #EEEEEE;
+
+	font-family: "Lucida Grande", "Bitstream Vera Sans", "Verdana";
+	font-size: 12px;
+	}
+
+#form_header
+	{
+	font-family: "Lucida Grande", "Bitstream Vera Sans", "Verdana";
+	font-size: 12px;
+	}
+
+#form_body
+	{
+	font-family: "Lucida Grande", "Bitstream Vera Sans", "Verdana";
+	font-size: 12px;
+	}
+
+#buttonBar
+	{
+	width: 1110px;
+	height: 30px;
+	}
+	
+#buttonBarLeft
+	{
+	float: left;
+	}
+	
+#buttonBarRight
+	{
+	float: right;
+	}
+	
+
+#button
+	{
+	font-family: "Lucida Grande", "Bitstream Vera Sans", "Verdana";
+	font-size: 12px;
+	border-width: 1px;
+	padding: 0px;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #617F8A;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	width: 28px
+	}
+#button:hover
+	{
+	background-color: #95A9B1;
+	}
+
+#button a  	{
+	color: #000000;
+	background-color: #617F8A;
+	text-decoration: none;
+	}
+
+#button a:hover {
+	color: #EEEEEE;
+	background-color: #95A9B1;
+	}
+
+
+#bannerMessage
+	{
+	font-family: "Lucida Grande", "Bitstream Vera Sans", "Verdana";
+	font-size: 12px;
+	border-width: 1px;
+	padding: 10px;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #dedede;
+	width: 200px;
+	margin-left: 100px;
+	margin-top:20px;
+	}
+
+a  	{
+	color: #617F8A;
+	background-color: transparent;
+	text-decoration: none;
+	}
+
+a:hover {
+	color: #95A9B1;
+	background-color: transparent;
+	}
+
+
+
+table.logbookTable {
+	font-family: verdana,arial,sans-serif;
+	font-size:11px;
+	color:#333333;
+	border-width: 1px;
+	border-color: #666666;
+	border-collapse: collapse;
+}
+table.logbookTable th {
+	border-width: 1px;
+	padding: 2px;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #dedede;
+}
+
+table.logbookTable td {
+	border-width: 1px;
+	padding: 2px;
+	border-style: solid;
+	border-color: #666666;
+}
+
+.Date_class
+	{
+	width: 30px;
+	}
+
+.From_class
+	{
+	width: 20px;
+	}
+
+.Time_class
+	{
+	width: 20px;
+	}
+
+.Remarks_class
+	{
+	width: 200px;
+	}
+
+
+
+
+.odd_row
+	{
+	background-color: #ffffff;	
+	font-size: 9px;
+	}
+
+.even_row
+	{
+	background-color: #AAAAAA;	
+	border: 1px solid black;
+	font-size: 9px;
+	}
+
+.total_row_bold
+	{
+	font-size: 11px;
+	font-weight: bold;
+	background-color: #FFFFFF;	
+	}
+
+.total_row_plain
+	{
+	font-size: 11px;
+	background-color: #FFFFFF;	
+	}
+
+
+#form_footer
+	{
+	}
+
+
+#page_footer 
+	{
+	clear: both;
+	padding-top: 2px;
+	text-align: center;
+	font-family: "Lucida Grande", "Bitstream Vera Sans", "Verdana";
+	font-size: 12px;
+	}
+
+ul {
+  font-family: Arial, Verdana;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+ul li {
+  display: block;
+  position: relative;
+  float: left;
+}
+li ul { display: none; }
+ul li a {
+  display: block;
+  text-decoration: none;
+  color: #ffffff;
+  border-top: 1px solid #ffffff;
+  padding: 5px 15px 5px 15px;
+  background: #2C5463;
+  margin-left: 1px;
+  white-space: nowrap;
+}
+ul li a:hover { background: #617F8A; }
+li:hover ul {
+  display: block;
+  position: absolute;
+}
+li:hover li {
+  float: none;
+  font-size: 11px;
+}
+li:hover a { background: #617F8A; }
+li:hover li a:hover { background: #95A9B1; }
+
+
+
+.tooltip {
+	cursor: help; text-decoration: none;
+	position: relative;
+}
+
+.tooltip span {
+	margin-left: -999em;
+	position: absolute;
+}
+.tooltip:hover span {
+	border-radius: 5px 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; 
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1); -webkit-box-shadow: 5px 5px rgba(0, 0, 0, 0.1); -moz-box-shadow: 5px 5px rgba(0, 0, 0, 0.1);
+	font-family: "Lucida Grande", "Bitstream Vera Sans", "Verdana";
+	position: absolute; left: 1em; top: 2em; z-index: 99;
+	margin-left: 0; width: 250px;
+}
+.tooltip:hover img {
+	border: 0; margin: -10px 0 0 -55px;
+	float: left; position: absolute;
+}
+.tooltip:hover em {
+	font-family: Candara, Tahoma, Geneva, sans-serif; font-size: 1.2em; font-weight: bold;
+	display: block; padding: 0.2em 0 0.6em 0;
+}
+.classic { padding: 0.8em 1em; }
+.custom { padding: 0.5em 0.8em 0.8em 2em; }
+.classic {background: #617F8A; border: 1px solid #95A9B1; }
+.critical { background: #617F8A; border: 1px solid #95A9B1;	}
+.help { background:#617F8A; border: 1px solid #95A9B1;	}
+.info { background: #617F8A; border: 1px solid #95A9B17;	}
+.warning { background: #617F8A; border: 1px solid #95A9B1; }
+	
+		

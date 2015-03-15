@@ -1,0 +1,13 @@
+<div id="form_header">
+	[% form_header %]
+</div>
+
+<div id="form_body">
+
+[% form_body %]
+
+</div>
+
+<div id="form_footer">
+	[% form_footer %]
+</div>

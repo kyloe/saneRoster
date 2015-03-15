@@ -1,0 +1,4 @@
+<br><div id="form_header">[% form_header %]</div>
+<br><div id="form_body">[% form_body %]</div>
+<br><div id="form_body">[% pdf_link %]</div>
+<br><div id="form_footer">[% form_footer %]</div>

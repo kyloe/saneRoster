@@ -1,0 +1,33 @@
+<div id="form_header">
+	[% form_header %]
+</div>
+
+<div id="form_body">
+
+	<div id="login_pane">
+		<form name="login" method="post">
+			<table>
+				<tr>
+					<td colspan = 2><br><b>Login now using RAIDO credentials</b><br><br></td>
+				</tr>
+				<tr>
+					<td>Staff ID</td>
+					<td><INPUT name=staff_id></td>
+				</tr>
+				<tr>
+					<td>Password</td>
+					<td><INPUT name=password type=password></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><INPUT type=submit></td>
+				</tr>
+			</table>
+
+		</form
+	</div>
+</div>
+
+<div id="form_footer">
+	[% form_footer %]
+</div>
