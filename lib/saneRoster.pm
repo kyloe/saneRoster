@@ -194,7 +194,7 @@ post '/scrape' => sub
 	{
 		# Need to login to raido again
 
-	my $raido = Kyloe::Raido::Connector->new();
+	my $raido = Kyloe::Raido::Connector::Logbook->new();
 
 	if (!$raido->login(session->{staff_id},session->{password}))
 		{
