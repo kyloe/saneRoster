@@ -9,7 +9,7 @@ use DBI;
 use CGI::FormBuilder;
 use Template;
 use HTML::Table::FromDatabase;
-use Kyloe::Raido::Connector;
+use Kyloe::Raido::Connector::Logbook;
 use Kyloe::Util::logbookToPDF;
 
 use LWP;
@@ -62,7 +62,7 @@ post '/login' => sub
 
 	if (isValidSaneRosterUser(params->{staff_id}))
 		{
-		my $raido = Kyloe::Raido::Connector->new();
+		my $raido = Kyloe::Raido::Connector::Logbook->new();
 	
 		if ($raido->login(params->{staff_id},params->{password}))
 			{
