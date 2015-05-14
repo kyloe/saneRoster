@@ -14,7 +14,7 @@ use Kyloe::Util::logbookToPDF;
 
 use LWP;
 
-
+set $CGI::LIST_CONTEXT_WARN = 0; #Gets around bug in CGI::FormBuilder::Field;
 
 our $VERSION = '0.1';
 
