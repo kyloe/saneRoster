@@ -32,4 +32,7 @@ session_dir: /tmp/dancer-sessions
 
 logger: "console"
 
+appdir: "/usr/app/saneRoster/"
+pubdir: "public"
+
 

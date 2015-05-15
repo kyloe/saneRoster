@@ -314,7 +314,7 @@ get '/view/*/*/*/*' => sub
 
  	my $link = 'No PDF available';
 
-	if (-e '/var/www/saneRoster/public'.$pdfFileName)
+	if (-e config->{appdir}.config->{pubdir}.$pdfFileName)
 		{
 		$link = '<a href='.$pdfFileName.'>Download</a>' ; 
 		}
@@ -606,7 +606,7 @@ ENDSUMSQL
 
 	my $pdfFileName =  '/pdf/'.session('staff_id').'/Logbook_'.session('staff_id').'_'.$year.'_'.$monthPadded.'.pdf';
  
- 	unless (-e config->{public}.$pdfFileName) 
+ 	unless (-e config->{appdir}.config->{pubdir}.$pdfFileName) 
 		{
  		my $util = Kyloe::Util::logbookToPDF->new(session('staff_id'),$month,$year);
  		$util->getPDF();
