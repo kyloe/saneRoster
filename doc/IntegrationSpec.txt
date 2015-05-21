@@ -1,0 +1,36 @@
+Integration of Fetchroster (ICS Stuff) and saneRoster (Logbook)
+
+
+Need to 
+
+Add FetchRoster config stuff to the database
+	People
+	  Their login details assume that the ones in saneROster are current
+	  Their format preferences
+	  Their source system
+	  
+	  
+	  entity credentials
+		username
+		password
+			  	
+	  entity service
+		name
+		id
+		connector (the perl class that connects to this thing
+			  	
+
+Rework Fetchroster to use database based preferences rather than the hard coded stuff
+
+Need to move all executables to saneRoster system
+
+Develop interface to allow users 
+	To maintain their own preferences 
+	To add 'start numbers' for logbook
+	
+Develop interface to allow admin to 
+	add other source systems
+	add remove users
+	add messages for calendar
+	email users
+	
