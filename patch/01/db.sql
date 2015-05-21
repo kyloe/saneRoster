@@ -48,9 +48,9 @@ GRANT ALL ON TABLE credentials TO raido;
 
 INSERT INTO service (name,connector) VALUES ('Raido Roster to ICS','Kyloe::Service::RaidoRosterToICS') ;
 INSERT INTO service (name,connector) VALUES ('CWP Roster to ICS','Kyloe::Service::CWPRosterToICS') ;
-INSERT INTO credentials (username,service_id,person_id,password) VALUES ('115', 'test') ;
+INSERT INTO credentials (username,password) VALUES ('115', 'test') ;
 INSERT INTO parameters (name,value) VALUES ('staffid',115);
-INSERT INTO parameters (name,value) VALUES ('password','test);
+INSERT INTO parameters (name,value) VALUES ('password','test');
 INSERT INTO parameters (name,value) VALUES ('checkin','yes');
 INSERT INTO parameters (name,value) VALUES ('altsummary','CODE');
 INSERT INTO parameters (name,value) VALUES ('summary','\'CODE\',\' \',\'DEP\',\'-\',\'ARR\'');
