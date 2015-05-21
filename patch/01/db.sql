@@ -21,7 +21,7 @@ CREATE TABLE credentials(
   service_id integer NOT NULL,
   username character varying(64),
   password character varying(1024),
-  paramHash character varying(1024),
+  paramHash character varying(1024),rm db.sql
   CONSTRAINT p_key_credentials PRIMARY KEY (id) -- comment
 )
 WITH (
