@@ -45,7 +45,7 @@ ALTER TABLE credentials
   OWNER TO raido;
 GRANT ALL ON TABLE credentials TO raido;
 
-
+ 
 INSERT INTO service (name,connector) VALUES ('Raido Roster to ICS','Kyloe::Service::RaidoRosterToICS') ;
 INSERT INTO service (name,connector) VALUES ('CWP Roster to ICS','Kyloe::Service::CWPRosterToICS') ;
 INSERT INTO credentials (username,password) VALUES ('115', 'test') ;
