@@ -11,6 +11,7 @@ CREATE TABLE service
 WITH (
   OIDS=FALSE
 );
+
 ALTER TABLE service
   OWNER TO raido;
 GRANT ALL ON TABLE service TO raido;
@@ -21,7 +22,7 @@ CREATE TABLE credentials(
   service_id integer NOT NULL,
   username character varying(64),
   password character varying(1024),
-  paramHash character varying(1024),rm db.sql
+  paramHash character varying(1024),
   CONSTRAINT p_key_credentials PRIMARY KEY (id) -- comment
 )
 WITH (
