@@ -18,8 +18,8 @@ GRANT ALL ON TABLE service TO raido;
 
 CREATE TABLE credentials(
   id integer DEFAULT nextval('fountain'::regclass),
-  person_id integer NOT NULL,
-  service_id integer NOT NULL,
+  person_id integer,
+  service_id integer,
   username character varying(64),
   password character varying(1024),
   paramHash character varying(1024),
