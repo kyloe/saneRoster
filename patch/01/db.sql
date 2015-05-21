@@ -59,4 +59,4 @@ UPDATE credentials SET person_id = q.id FROM (SELECT id FROM person WHERE staffi
 UPDATE credentials SET service_id = q.id FROM (SELECT id FROM service WHERE name = 'Raido Roster to ICS') as q;
 
 UPDATE parameters SET credential_id_id = q.id FROM (SELECT id FROM credentials WHERE username = 115) as q;
-
+  
