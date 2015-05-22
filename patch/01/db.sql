@@ -56,8 +56,8 @@ INSERT INTO parameters (name,value) VALUES ('checkin','yes');
 INSERT INTO parameters (name,value) VALUES ('altsummary','CODE');
 INSERT INTO parameters (name,value) VALUES ('summary','''CODE'','' '',''DEP'',''-'',''ARR''');
 
-UPDATE credentials SET person_id = q.id FROM (SELECT id FROM person WHERE staffid = 115) as q;
+UPDATE credentials SET person_id = q.id FROM (SELECT id FROM person WHERE staff_id = 115) as q;
 UPDATE credentials SET service_id = q.id FROM (SELECT id FROM service WHERE name = 'Raido Roster to ICS') as q;
 
-UPDATE parameters SET credential_id_id = q.id FROM (SELECT id FROM credentials WHERE username = 115) as q;
+UPDATE parameters SET credential_id_id = q.id FROM (SELECT id FROM credentials WHERE username = '115') as q;
   
