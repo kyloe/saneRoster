@@ -42,9 +42,9 @@ CREATE TABLE parameters(
 WITH (
   OIDS=FALSE
 );
-ALTER TABLE credentials
+ALTER TABLE parameters
   OWNER TO raido;
-GRANT ALL ON TABLE credentials TO raido;
+GRANT ALL ON TABLE parameters TO raido;
 
  
 INSERT INTO service (name,connector) VALUES ('Raido Roster to ICS','Kyloe::Service::RaidoRosterToICS') ;
