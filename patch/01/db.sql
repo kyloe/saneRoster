@@ -44,7 +44,7 @@ WITH (
 );
 ALTER TABLE parameters
   OWNER TO raido;
-GRANT ALL ON TABLE parameters TO raido;
+GRANT ALL ON TABLE parameters TO raido; 
 
  
 INSERT INTO service (name,connector) VALUES ('Raido Roster to ICS','Kyloe::Service::RaidoRosterToICS') ;
