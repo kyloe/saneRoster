@@ -23,7 +23,7 @@ our $VERSION = '0.1';
 my $menuString="<a href=/>Home</a>&nbsp;<a href=/view/115>View</a>&nbsp;<a href=/calendar>Calendar</a>";
 
 #our $dbh = DBI->connect("dbi:Pg:dbname=raido;user=raido;password=raido") or die "Could not connect to database";
-our $dbh = database('raido'); 
+our $dbh = database(); 
 
 my $raido = undef;
 

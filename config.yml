@@ -38,16 +38,14 @@ pubdir: "public"
 
 plugins:
   Database:
-    connections:
-      raido:
-        driver: 'Pg'
-        database: 'raido'
-        host: 'localhost'
-        port: 5432
-        username: 'raido'
-        password: 'raido'
-        connection_check_threshold: 10
-        dbi_params:
-          RaiseError: 1
-          AutoCommit: 1
-        log_queries: 1
+    driver: 'Pg'
+    database: 'raido'
+    host: 'localhost'
+    port: 5432
+    username: 'raido'
+    password: 'raido'
+    connection_check_threshold: 10
+    dbi_params:
+      RaiseError: 1
+      AutoCommit: 1
+    log_queries: 1
