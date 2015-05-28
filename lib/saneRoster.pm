@@ -150,15 +150,15 @@ get '/preferences2' => sub
 	    # First create our form
 		
 		my $fields->{name} = $dbval->{name};
-		my $fields->{email} = $dbval->{email};
-		my $fields->{calendarApplication} = $dbval->{calendarApplication};
+		   $fields->{email} = $dbval->{email};
+		   $fields->{calendarApplication} = $dbval->{calendarApplication};
 				debug Dumper($dbval);
 				debug Dumper($prefs);
 
 		my $pref_counter = 0;
 		foreach my $pref_key (keys $prefs)
 			{
-			$fields->{$prefs->{$pref_key}->pa__name}.'_'.$pref_counter} = $prefs->{$pref_key}->{pa__value};
+			$fields->{$prefs->{$pref_key}->{pa__name}.'_'.$pref_counter} = $prefs->{$pref_key}->{pa__value};
 			$pref_counter++;	
 			}
 
