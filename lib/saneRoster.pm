@@ -11,6 +11,7 @@ use Template;
 use HTML::Table::FromDatabase;
 use Kyloe::Raido::Connector::Logbook;
 use Kyloe::Util::logbookToPDF;
+use Dancer::Plugin::SimpleCRUD;
 
 use LWP;
 
@@ -90,6 +91,14 @@ post '/login' => sub
 	};
 
 
+simple_crud(
+        record_title => 'parameters',
+        prefix => '/para',
+        db_table => 'parameters',
+        editable => 1,
+    );
+
+
 get '/preferences' => sub
 {
 		set layout=>'main';
@@ -152,6 +161,8 @@ get '/preferences2' => sub
 		my $fields->{name} = $dbval->{name};
 		   $fields->{email} = $dbval->{email};
 		   $fields->{calendarApplication} = $dbval->{calendarApplication};
+		   $fields->{id} = $dbval->{id};
+		   
 				debug Dumper($dbval);
 				debug Dumper($prefs);
 

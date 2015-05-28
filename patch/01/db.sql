@@ -63,3 +63,4 @@ UPDATE credentials SET service_id = q.id FROM (SELECT id FROM service WHERE name
 
 UPDATE parameters SET credential_id = q.id FROM (SELECT id FROM credentials WHERE username = '115') as q;
   
+INSERT INTO parameters (name,value,credential_id) VALUES ('staffid',115,1996);
