@@ -64,7 +64,8 @@ post '/login' => sub
 		{
 		my $raido = Kyloe::Raido::Connector::Logbook->new();
 	
-		if ($raido->login(params->{staff_id},params->{password}))
+		if (1 || $raido->login(params->{staff_id},params->{password})) # Hack to speed up testing
+#		if ($raido->login(params->{staff_id},params->{password}))
 			{
 				session staff_id => params->{staff_id};
 				session password => params->{password};
@@ -148,7 +149,7 @@ get '/preferences2' => sub
 
 		
 		$dbval->{Extra} = 'Value';
-print Dumper($dbval);
+debug Dumper($dbval);
 	    my $form = CGI::FormBuilder->new(
 	                    name     => 'preferences',
 	                    action   => '/preferences',
