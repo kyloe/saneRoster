@@ -12,6 +12,7 @@ use HTML::Table::FromDatabase;
 use Kyloe::Raido::Connector::Logbook;
 use Kyloe::Util::logbookToPDF;
 use Dancer::Plugin::SimpleCRUD;
+use Dancer::Plugin::Database;
 
 use LWP;
 
@@ -21,8 +22,8 @@ our $VERSION = '0.1';
 
 my $menuString="<a href=/>Home</a>&nbsp;<a href=/view/115>View</a>&nbsp;<a href=/calendar>Calendar</a>";
 
-our $dbh = DBI->connect("dbi:Pg:dbname=raido;user=raido;password=raido") or die "Could not connect to database";
-
+#our $dbh = DBI->connect("dbi:Pg:dbname=raido;user=raido;password=raido") or die "Could not connect to database";
+our $dbh = database('raido'); 
 
 my $raido = undef;
 
