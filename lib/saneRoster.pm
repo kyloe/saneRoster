@@ -96,9 +96,9 @@ simple_crud(
         record_title => 'person',
         prefix => '/person',
         db_table => 'person',
-        editable => 1,
+        editable => 0,
         key_column => 'id',
-    );
+    );	
 
 
 get '/preferences' => sub
