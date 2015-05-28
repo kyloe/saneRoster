@@ -97,6 +97,7 @@ simple_crud(
         prefix => '/para',
         db_table => 'parameters',
         editable => 1,
+        key_column => 'id',
     );
 
 
