@@ -146,8 +146,9 @@ get '/preferences2' => sub
 
 	    # First create our form
 
+		
 		$dbval->{Extra} = 'Value';
-
+print Dumper($dbval);
 	    my $form = CGI::FormBuilder->new(
 	                    name     => 'preferences',
 	                    action   => '/preferences',
