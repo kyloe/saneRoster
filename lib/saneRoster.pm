@@ -150,6 +150,7 @@ get '/preferences2' => sub
 		my $fields->{name} = $dbval->{name};
 		my $fields->{email} = $dbval->{email};
 		my $fields->{calendarApplication} = $dbval->{calendarApplication};
+				debug Dumper($prefs);
 
 		my $pref_counter = 0;
 		foreach my $pref ($prefs)
