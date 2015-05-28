@@ -124,6 +124,50 @@ get '/preferences' => sub
 		template 'form', {form_header => '', form_body=>$form->render(header => 0),form_footer=>'' };
 };
 
+get '/preferences2' => sub
+{
+		set layout=>'main';
+		
+		# Get a field list from the preferences list
+		# for each field get a list of values
+		# for each list of values identifiy a default
+		 
+		# prepare a form and deliver it
+
+
+		# Need to select a list of services, for each service, credentials and a set of parameters 
+
+		
+		my $my_staff_id = session->{staff_id};
+		my $sql = qq/select "id","staff_id","email" from person where "staff_id" = $my_staff_id/;
+		my $dbval = $dbh->selectrow_hashref($sql);
+		my $sql = qq/select pa.id as pa__id,s.name as s__name,pe.staff_id as pe__staff,pe.name as pe__name,c.username as c__username,c.password as c__password,pa.name as pa_name,pa.value as pa__value from service s,person pe,credentials c, parameters pa where c.person_id = $dbval->{id} and c.service_id = s.id and pa.credential_id = c.id/;
+		my $prefs = $dbh->selectall_hashref($sql,'pa__id');
+
+	    # First create our form
+
+		$dbval->{Extra} = 'Value';
+
+	    my $form = CGI::FormBuilder->new(
+	                    name     => 'preferences',
+	                    action   => '/preferences',
+	                    method   => 'post',
+	                    fields   => $dbval,
+	                    validate => {
+                        			email => 'EMAIL'
+                    				}
+	               		);
+		
+		$form->field(name => 'calendarApplication',
+                 	 options => [qw(Google iCal Other)]);
+		$form->field(name => 'staff_id',
+                 	 type => 'hidden');
+                 	 
+         
+		template 'form', {form_header => '', form_body=>$form->render(header => 0),form_footer=>'' };
+};
+
+
 
 post '/preferences' => sub
 	{
