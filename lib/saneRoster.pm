@@ -93,9 +93,9 @@ post '/login' => sub
 
 
 simple_crud(
-        record_title => 'parameters',
-        prefix => '/para',
-        db_table => 'parameters',
+        record_title => 'person',
+        prefix => '/person',
+        db_table => 'person',
         editable => 1,
         key_column => 'id',
     );
