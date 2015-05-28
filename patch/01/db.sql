@@ -50,6 +50,7 @@ GRANT ALL ON TABLE parameters TO raido;
 INSERT INTO service (name,connector) VALUES ('Raido Roster to ICS','Kyloe::Service::RaidoRosterToICS') ;
 INSERT INTO service (name,connector) VALUES ('CWP Roster to ICS','Kyloe::Service::CWPRosterToICS') ;
 INSERT INTO credentials (username,password) VALUES ('115', 'test') ;
+INSERT INTO credentials (username,password) VALUES ('999', 'test') ;
 INSERT INTO parameters (name,value) VALUES ('staffid',115);
 INSERT INTO parameters (name,value) VALUES ('password','test');
 INSERT INTO parameters (name,value) VALUES ('checkin','yes');
@@ -57,7 +58,8 @@ INSERT INTO parameters (name,value) VALUES ('altsummary','CODE');
 INSERT INTO parameters (name,value) VALUES ('summary','CODE, ,DEP,-,ARR');
 
 UPDATE credentials SET person_id = q.id FROM (SELECT id FROM person WHERE staff_id = 115) as q;
-UPDATE credentials SET service_id = q.id FROM (SELECT id FROM service WHERE name = 'Raido Roster to ICS') as q;
+UPDATE credentials SET service_id = q.id FROM (SELECT id FROM service WHERE name = 'Raido Roster to ICS') as q WHERE username = '115';
+UPDATE credentials SET service_id = q.id FROM (SELECT id FROM service WHERE name = 'CWP Roster to ICS') as q WHERE username = '999';
 
 UPDATE parameters SET credential_id = q.id FROM (SELECT id FROM credentials WHERE username = '115') as q;
   

@@ -142,7 +142,7 @@ get '/preferences2' => sub
 		my $my_staff_id = session->{staff_id};
 		my $sql = qq/select "id","name","staff_id","email" from person where "staff_id" = $my_staff_id/;
 		my $dbval = $dbh->selectrow_hashref($sql);
-		   $sql = qq/select pa.id as pa__id,s.name as s__name,pe.staff_id as pe__staff_id,pe.name as pe__name,c.username as c__username,c.password as c__password,pa.name as pa__name,pa.value as pa__value /.
+		   $sql = qq/select pa.id as pa__id,s.name as s__name,pe.staff_id as pe__staff_id,pe.name as pe__name,c.id as c__id, c.username as c__username,c.password as c__password,pa.name as pa__name,pa.value as pa__value /.
 		          qq/from service s,person pe,credentials c, parameters pa /.
 		          qq/where c.person_id = pe.id and pe.id = $dbval->{id} and c.service_id = s.id and pa.credential_id = c.id/;
 		my $prefs = $dbh->selectall_hashref($sql,'pa__id');
@@ -155,11 +155,9 @@ get '/preferences2' => sub
 				debug Dumper($dbval);
 				debug Dumper($prefs);
 
-		my $pref_counter = 0;
 		foreach my $pref_key (keys $prefs)
 			{
-			$fields->{$prefs->{$pref_key}->{pa__name}.'_'.$pref_counter} = $prefs->{$pref_key}->{pa__value};
-			$pref_counter++;	
+			$fields->{$prefs->{$pref_key}->{pa__name}.'_'.$prefs->{$pref_key}->{c__id}} = $prefs->{$pref_key}->{pa__value};	
 			}
 
 	    my $form = CGI::FormBuilder->new(
