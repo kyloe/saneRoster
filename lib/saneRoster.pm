@@ -91,13 +91,13 @@ post '/login' => sub
 
 	};
 
-#
-#simple_crud(
-#        record_title => 'parameters',
-#        prefix => '/para',
-#        db_table => 'parameters',
-#        editable => 1,
-#    );
+
+simple_crud(
+        record_title => 'parameters',
+        prefix => '/para',
+        db_table => 'parameters',
+        editable => 1,
+    );
 
 
 get '/preferences' => sub
