@@ -156,9 +156,9 @@ get '/preferences2' => sub
 				debug Dumper($prefs);
 
 		my $pref_counter = 0;
-		foreach my $pref ($prefs)
+		foreach my $pref_key (keys $prefs)
 			{
-			$fields->{$pref->{name}.'_'.$pref_counter} = $pref->{value};
+			$fields->{$prefs->{$pref_key}->pa__name}.'_'.$pref_counter} = $prefs->{$pref_key}->{pa__value};
 			$pref_counter++;	
 			}
 
