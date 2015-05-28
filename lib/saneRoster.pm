@@ -142,7 +142,9 @@ get '/preferences2' => sub
 		my $my_staff_id = session->{staff_id};
 		my $sql = qq/select "id","name","staff_id","email" from person where "staff_id" = $my_staff_id/;
 		my $dbval = $dbh->selectrow_hashref($sql);
-		   $sql = qq/select pa.id as pa__id,s.name as s__name,pe.staff_id as pe__staff,pe.name as pe__name,c.username as c__username,c.password as c__password,pa.name as pa_name,pa.value as pa__value from service s,person pe,credentials c, parameters pa where c.person_id = $dbval->{id} and c.service_id = s.id and pa.credential_id = c.id/;
+		   $sql = qq/select pa.id as pa__id,s.name as s__name,pe.staff_id as pe__staff_id,pe.name as pe__name,c.username as c__username,c.password as c__password,pa.name as pa_name,pa.value as pa__value /.
+		          qq/from service s,person pe,credentials c, parameters pa /.
+		          qq/where c.person_id = pe.id and pe.id = $dbval->{id} and c.service_id = s.id and pa.credential_id = c.id/;
 		my $prefs = $dbh->selectall_hashref($sql,'pa__id');
 
 	    # First create our form
@@ -150,6 +152,7 @@ get '/preferences2' => sub
 		my $fields->{name} = $dbval->{name};
 		my $fields->{email} = $dbval->{email};
 		my $fields->{calendarApplication} = $dbval->{calendarApplication};
+				debug Dumper($dbval);
 				debug Dumper($prefs);
 
 		my $pref_counter = 0;
