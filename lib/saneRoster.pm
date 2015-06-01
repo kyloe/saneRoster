@@ -11,8 +11,8 @@ use Template;
 use HTML::Table::FromDatabase;
 use Kyloe::Raido::Connector::Logbook;
 use Kyloe::Util::logbookToPDF;
-use Dancer::Plugin::SimpleCRUD;
-use Dancer::Plugin::Database;
+
+
 
 use LWP;
 
@@ -22,8 +22,7 @@ our $VERSION = '0.1';
 
 my $menuString="<a href=/>Home</a>&nbsp;<a href=/view/115>View</a>&nbsp;<a href=/calendar>Calendar</a>";
 
-#our $dbh = DBI->connect("dbi:Pg:dbname=raido;user=raido;password=raido") or die "Could not connect to database";
-our $dbh = database(); 
+our $dbh = DBI->connect("dbi:Pg:dbname=raido;user=raido;password=raido") or die "Could not connect to database";
 
 my $raido = undef;
 
@@ -90,15 +89,15 @@ post '/login' => sub
 		}
 
 	};
-
-
-simple_crud(
-        record_title => 'person',
-        prefix => '/person',
-        db_table => 'person',
-        editable => 0,
-        key_column => 'id',
-    );	
+#
+#
+#simple_crud(
+#        record_title => 'person',
+#        prefix => '/person',
+#        db_table => 'person',
+#        editable => 0,
+#        key_column => 'id',tu
+#    );	
 
 
 get '/preferences' => sub
@@ -136,8 +135,16 @@ get '/preferences' => sub
 		template 'form', {form_header => '', form_body=>$form->render(header => 0),form_footer=>'' };
 };
 
-get '/preferences2' => sub
+get '/parameters' => sub
 {
+	
+	
+	# Login
+	# List services active and not active
+	# click service
+	# show credentials 
+	# edit credentials
+	
 		set layout=>'main';
 		
 		# Get a field list from the preferences list
